@@ -1,0 +1,23 @@
+{
+  "name": "eslint-config-exchange-solutions",
+  "version": "0.0.0",
+  "description": "ESLint Default configurations for Towers Watson Exchange Solutions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthew L Smith <mtscout6@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TWExchangeSolutions/eslint-config-exchange-solutions.git"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-config"
+  ],
+  "bugs": {
+    "url": "https://github.com/TWExchangeSolutions/eslint-config-exchange-solutions/issues"
+  },
+  "homepage": "https://github.com/TWExchangeSolutions/eslint-config-exchange-solutions#readme"
+}
