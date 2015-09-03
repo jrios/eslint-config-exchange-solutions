@@ -1,0 +1,5 @@
+node_modules/
+lib/
+test/base/
+test/default/
+test/es5/
