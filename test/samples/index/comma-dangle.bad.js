@@ -1,6 +1,5 @@
 /* eslint no-unused-vars: 0 */
 
-// bad
 var hero = {
   firstName: 'Dana',
   lastName: 'Scully',
@@ -9,15 +8,7 @@ var hero = {
 var heroes = [
   'Batman',
   'Superman',
-];
+]
 
-// good
-var hero = {
-  firstName: 'Dana',
-  lastName: 'Scully'
-};
-
-var heroes = [
-  'Batman',
-  'Superman'
-];
+//error 5:21 comma-dangle - Unexpected trailing comma.
+//error 10:13 comma-dangle - Unexpected trailing comma.

@@ -1,7 +1,7 @@
 # Towers Watson Exchange Solutions JavaScript Style Guide
 
-We are extending the [Airbnb](https://github.com/airbnb/javascript) Style Guide,
-with overrides for things we do not plan to prescribe to.
+We are extending the [Airbnb](https://github.com/airbnb/javascript) Style Guide, with overrides for
+things we do not plan to prescribe to.
 
 ## Table of Contents
 
@@ -29,12 +29,11 @@ with overrides for things we do not plan to prescribe to.
 1. `npm install --save-dev eslint-config-exchange-solutions`
 2. add `"extends": "exchange-solutions/es5"` to your .eslintrc
 
-See [Airbnb's Javascript styleguide](https://github.com/airbnb/javascript),
-[Towers Watson Exchange Solutions
-styleguide](https://github.com/TWExchangeSolutions/eslint-config-exchange-solutions)
-and the [ESlint config
-docs](http://eslint.org/docs/user-guide/configuring#extending-configuration-files)
-for more information.
+See [Airbnb's Javascript styleguide](https://github.com/airbnb/javascript), [Towers Watson Exchange
+Solutions styleguide](https://github.com/TWExchangeSolutions/eslint-config-exchange-solutions) and
+the [ESlint config
+docs](http://eslint.org/docs/user-guide/configuring#extending-configuration-files) for more
+information.
 
 ## Rules
 
@@ -42,32 +41,15 @@ for more information.
 
 - [1](#commas.1) <a name='commas.1'></a> Additional trailing comma: **Nope.**
 
-> Airbnb [states] that this rule makes git diffs cleaner, though we don't really
-> see any significant value in this especially for Arrays or Objects that only
-> have one item.
+> Airbnb [states] that this rule makes git diffs cleaner, though we don't really see any significant
+> value in this especially for Arrays or Objects that only have one item.
 
-```javascript
-  // bad
-  const hero = {
-    firstName: 'Dana',
-    lastName: 'Scully',
-  };
+```javascript // bad const hero = { firstName: 'Dana', lastName: 'Scully', };
 
-  const heroes = [
-    'Batman',
-    'Superman',
-  ];
+  const heroes = [ 'Batman', 'Superman', ];
 
-  // good
-  const hero = {
-    firstName: 'Dana',
-    lastName: 'Scully'
-  };
+  // good const hero = { firstName: 'Dana', lastName: 'Scully' };
 
-  const heroes = [
-    'Batman',
-    'Superman'
-  ];
-```
+  const heroes = [ 'Batman', 'Superman' ]; ```
 
 **[⬆ back to top](#table-of-contents)**

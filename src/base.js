@@ -1,11 +1,5 @@
 import _ from 'lodash';
 import airbnb from 'eslint-config-airbnb/base';
+import core from './core';
 
-const exchangeSolutionsOverrides = {
-  'rules': {
-    'comma-dangle': 0,
-    'vars-on-top': 0
-  }
-};
-
-export default _.merge({}, airbnb, exchangeSolutionsOverrides);
+export default _.merge({}, airbnb, core);
