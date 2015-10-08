@@ -4,8 +4,11 @@
   "description": "ESLint Default configurations for Towers Watson Exchange Solutions",
   "main": "lib/index.js",
   "scripts": {
-    "build": "rimraf lib && babel src --out-dir lib",
-    "lint": "npm run build && babel-node config-link && eslint ./"
+    "local-setup": "./tools/config-link",
+    "lint": "npm run local-setup && eslint ./",
+    "test": "npm run lint && npm run test-only",
+    "test-only": "babel-node test",
+    "tdd": "nodemon --ignore node_modules --exec npm run test-only"
   },
   "author": "Matthew L Smith <mtscout6@gmail.com>",
   "license": "MIT",
@@ -22,8 +25,7 @@
   },
   "homepage": "https://github.com/TWExchangeSolutions/eslint-config-exchange-solutions#readme",
   "dependencies": {
-    "eslint-config-airbnb": "^0.1.0",
-    "lodash": "^3.10.1"
+    "eslint-config-airbnb": "^0.1.0"
   },
   "devDependencies": {
     "babel": "^5.8.23",
@@ -33,6 +35,7 @@
     "eslint": "^1.3.1",
     "eslint-plugin-react": "^3.3.1",
     "fs-promise": "^0.3.1",
+    "lodash": "^3.10.1",
     "mocha": "^2.3.0",
     "rimraf": "^2.4.3",
     "rx": "^3.1.2"

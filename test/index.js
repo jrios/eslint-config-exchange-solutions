@@ -5,6 +5,8 @@ import chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 import fsp from 'fs-promise';
 import { linter } from 'eslint';
+import Config from 'eslint/lib/config';
+import eslintRules from 'eslint/lib/rules';
 
 chai.should();
 chai.use(chaiAsPromised);
@@ -37,8 +39,8 @@ const sampleTests = {
       fsp.readFile(samplePath)
         .then(contents => {
           const lines = contents.toString().trim().split('\n');
-          const expectedErrors = _.takeRightWhile(lines, l => /^\/\//.test(l))
-            .map(l => l.substring(2));
+          const expectedErrors = _.takeRightWhile(lines, line => /^\/\//.test(line))
+            .map(line => line.substring(2).trim());
 
           const messages = linter.verify(contents.toString(), config, samplePath);
           formatMessages(messages).should.eql(expectedErrors);
@@ -67,9 +69,11 @@ function ruleSuiteBuilder(parentSuite, dir, config, sampleScripts) {
   Object.keys(ruleSuites).forEach(ruleSuiteName => {
     const ruleSuite = Suite.create(parentSuite, ruleSuiteName);
 
-    ruleSuites[ruleSuiteName].forEach(test => {
-      ruleSuite.addTest(new Test(test, sampleTests[test](`${dir}/${ruleSuiteName}.${test}.js`, config)));
-    });
+    ruleSuites[ruleSuiteName]
+      .filter(test => !/^x/.test(test))
+      .forEach(test => {
+        ruleSuite.addTest(new Test(test, sampleTests[test](`${dir}/${ruleSuiteName}.${test}.js`, config)));
+      });
   });
 }
 
@@ -77,8 +81,13 @@ function suiteBuilder(dir) {
   const suite = Suite.create(mocha.suite, dir);
   const fullDir = path.join(samplesDir, dir);
 
-  const config = require(`../src/${dir}`);
-  config.useEslintrc = false;
+  const rawConfig = require(`../${dir}`);
+  const config = new Config({baseConfig: rawConfig}).baseConfig;
+
+  (config.plugins || []).forEach(pluginName => {
+    const plugin = require(`eslint-plugin-${pluginName}`);
+    eslintRules.import(plugin.rules, pluginName);
+  });
 
   return fsp.readdir(fullDir)
     .then(sampleScripts => {
@@ -90,10 +99,10 @@ fsp.readdir(samplesDir)
   .then(dirs => Promise.all(dirs.map(suiteBuilder)))
   .then(() => new Promise((resolve, reject) => {
     console.log('Running Tests:');
-    mocha.run(resolve)
+    mocha.run(resolve);
   }))
   .then(exitCode => process.exit(exitCode))
   .catch(err => {
-    console.log(err);
+    console.log(err.stack);
     process.exit(1);
   });

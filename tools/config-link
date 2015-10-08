@@ -1,3 +1,5 @@
+#!/usr/bin/env babel-node
+
 import 'shelljs/global';
 
 ln('-sf', './', './node_modules/eslint-config-exchange-solutions');

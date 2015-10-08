@@ -1,11 +1,11 @@
 /* eslint no-unused-vars: 0 */
 
-let hero = {
+const hero = {
   firstName: 'Dana',
   lastName: 'Scully'
 };
 
-let heroes = [
+const heroes = [
   'Batman',
   'Superman'
 ];

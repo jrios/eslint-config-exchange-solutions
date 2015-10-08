@@ -10,5 +10,5 @@ var heroes = [
   'Superman',
 ];
 
-//error 5:21 comma-dangle - Unexpected trailing comma.
-//error 10:13 comma-dangle - Unexpected trailing comma.
+// error 5:21 comma-dangle - Unexpected trailing comma.
+// error 10:13 comma-dangle - Unexpected trailing comma.

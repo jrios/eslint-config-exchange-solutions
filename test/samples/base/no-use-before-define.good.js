@@ -1,15 +1,17 @@
-let a = 10;
+/* eslint id-length: 0, no-alert: 0, no-unused-vars: 0 */
+
+const a = 10;
 alert(a);
 
-f();
 function f() {}
+f();
 
-let b = 1;
+const b = 1;
 function g() {
-    return b;
+  return b;
 }
 
 {
-    let c = 1;
-    alert(c);
+  const c = 1;
+  alert(c);
 }
