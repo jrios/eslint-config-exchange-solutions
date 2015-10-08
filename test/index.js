@@ -60,9 +60,9 @@ function ruleSuiteBuilder(parentSuite, dir, config, sampleScripts) {
         [ruleSuiteName]: [testName]
       };
     })
-    .reduce((acc, x) => _.merge({}, acc, x, (a, b) => {
-      if (_.isArray(a)) {
-        return a.concat(b);
+    .reduce((acc, x) => _.merge({}, acc, x, (array1, array2) => {
+      if (_.isArray(array1)) {
+        return array1.concat(array2);
       }
     }), {});
 
