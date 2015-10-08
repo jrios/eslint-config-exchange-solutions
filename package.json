@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-exchange-solutions",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ESLint Default configurations for Towers Watson Exchange Solutions",
   "main": "lib/index.js",
   "scripts": {
