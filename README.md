@@ -1,5 +1,7 @@
 # Towers Watson Exchange Solutions JavaScript Style Guide
 
+[![Build Status](https://travis-ci.org/TWExchangeSolutions/eslint-config-exchange-solutions.svg?branch=master)](https://travis-ci.org/TWExchangeSolutions/eslint-config-exchange-solutions)
+
 We are extending the [Airbnb](https://github.com/airbnb/javascript) Style Guide, with overrides for
 things we do not plan to prescribe to.
 
