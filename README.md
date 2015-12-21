@@ -46,12 +46,14 @@ information.
 > Airbnb [states] that this rule makes git diffs cleaner, though we don't really see any significant
 > value in this especially for Arrays or Objects that only have one item.
 
-```javascript // bad const hero = { firstName: 'Dana', lastName: 'Scully', };
+```javascript
+// bad const hero = { firstName: 'Dana', lastName: 'Scully', };
 
-  const heroes = [ 'Batman', 'Superman', ];
+const heroes = [ 'Batman', 'Superman', ];
 
-  // good const hero = { firstName: 'Dana', lastName: 'Scully' };
+// good const hero = { firstName: 'Dana', lastName: 'Scully' };
 
-  const heroes = [ 'Batman', 'Superman' ]; ```
+const heroes = [ 'Batman', 'Superman' ];
+```
 
 **[⬆ back to top](#table-of-contents)**
