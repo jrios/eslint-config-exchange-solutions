@@ -17,7 +17,7 @@ const mocha = new Mocha({
 const samplesDir = path.join(__dirname, 'samples');
 
 function formatMessages(messages) {
-  return messages.map(({line, column, message, ruleId, severity}) => {
+  return messages.map(({ line, column, message, ruleId, severity }) => {
     const level = severity === 2 ? 'error' : 'warning';
     return `${level} ${line}:${column} ${ruleId} - ${message}`;
   });
@@ -82,7 +82,7 @@ function suiteBuilder(dir) {
   const fullDir = path.join(samplesDir, dir);
 
   const rawConfig = require(`../${dir}`);
-  const config = new Config({baseConfig: rawConfig}).baseConfig;
+  const config = new Config({ baseConfig: rawConfig }).baseConfig;
 
   (config.plugins || []).forEach(pluginName => {
     const plugin = require(`eslint-plugin-${pluginName}`);
