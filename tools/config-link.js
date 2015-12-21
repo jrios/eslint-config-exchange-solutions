@@ -1,4 +1,4 @@
-#!/usr/bin/env babel-node
+/* global ln */
 
 import 'shelljs/global';
 

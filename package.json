@@ -4,7 +4,7 @@
   "description": "ESLint Default configurations for Towers Watson Exchange Solutions",
   "main": "lib/index.js",
   "scripts": {
-    "local-setup": "./tools/config-link",
+    "local-setup": "babel-node ./tools/config-link.js",
     "lint": "npm run local-setup && eslint ./",
     "test": "npm run lint && npm run test-only",
     "test-only": "babel-node test",
@@ -28,7 +28,6 @@
     "eslint-config-airbnb": "^0.1.0"
   },
   "devDependencies": {
-    "babel": "^6.1.18",
     "babel-cli": "^6.2.0",
     "babel-core": "^6.2.1",
     "babel-eslint": "^4.1.1",
