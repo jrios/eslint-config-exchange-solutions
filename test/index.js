@@ -72,7 +72,8 @@ function ruleSuiteBuilder(parentSuite, dir, config, sampleScripts) {
     ruleSuites[ruleSuiteName]
       .filter(test => !/^x/.test(test))
       .forEach(test => {
-        ruleSuite.addTest(new Test(test, sampleTests[test](`${dir}/${ruleSuiteName}.${test}.js`, config)));
+        const testPath = `${dir}/${ruleSuiteName}.${test}.js`;
+        ruleSuite.addTest(new Test(test, sampleTests[test](testPath, config)));
       });
   });
 }
