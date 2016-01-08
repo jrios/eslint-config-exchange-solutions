@@ -24,7 +24,7 @@
     "url": "https://github.com/TWExchangeSolutions/eslint-config-exchange-solutions/issues"
   },
   "homepage": "https://github.com/TWExchangeSolutions/eslint-config-exchange-solutions#readme",
-  "peerDependencies": {
+  "dependencies": {
     "eslint-config-airbnb": "^2.1.1"
   },
   "devDependencies": {
