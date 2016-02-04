@@ -10,4 +10,4 @@ myFunc(function foo() {
 
 (function selfInvoking(foo) {
   return foo;
-})();
+}());
