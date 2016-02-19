@@ -2,4 +2,4 @@
 
 import 'shelljs/global';
 
-ln('-sf', './', './node_modules/eslint-config-exchange-solutions');
+ln('-sf', process.cwd(), './node_modules/eslint-config-exchange-solutions');
