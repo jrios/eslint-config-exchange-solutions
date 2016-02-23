@@ -64,6 +64,8 @@ function ruleSuiteBuilder(parentSuite, dir, config, sampleScripts) {
       if (_.isArray(array1)) {
         return array1.concat(array2);
       }
+
+      return null;
     }), {});
 
   Object.keys(ruleSuites).forEach(ruleSuiteName => {
