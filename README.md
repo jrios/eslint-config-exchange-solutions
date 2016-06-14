@@ -18,7 +18,7 @@ things we do not plan to prescribe to.
 
 ### With React Style
 
-1. `npm install --save-dev eslint-config-exchange-solutions babel-eslint eslint-plugin-react`
+1. `npm install --save-dev eslint-config-exchange-solutions babel-eslint eslint-plugin-react eslint-plugin-import eslint-plugin-jsx-a11y`
 2. add `"extends": "exchange-solutions"` to your .eslintrc
 
 ### Without React Style
